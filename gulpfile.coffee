@@ -13,7 +13,8 @@ gulp.task 'browser-sync', ->
     watchOptions:
       debounceDelay: 0
     server:
-      baseDir: config.dest
+      baseDir: './'
+      index: './dest/index.html'
     notify: false
     reloadDelay: 0
 

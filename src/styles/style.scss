@@ -1,3 +1,82 @@
 // bower:scss
 @import "../../bower_components/bourbon/dist/_bourbon.scss";
 // endbower
+
+body {
+  display: table-cell;
+  @include size(100vw 100vh);
+  vertical-align: middle;
+}
+
+.menu {
+  $hanberger-width: 40px;
+  $span: 13px;
+  $duration: 0.3s;
+  $delay: $duration - 0.1s;
+
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  @include size(50px);
+
+  .berger {
+    @include position(absolute, 50% null null 50%);
+    margin-left: $hanberger-width / 2 * -1; // centering
+    transition-property: transform;
+    transition-duration: $duration;
+    &,
+    &:before,
+    &:after {
+      @include size($hanberger-width 3px);
+      background-color: blue;
+    }
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+    }
+    &:before {
+      top: $span;
+      transition-property: top;
+      transition-duration: $duration;
+      transition-delay: $delay;
+    }
+    &:after {
+      bottom: $span;
+      transition-property: bottom ;
+      transition-duration: $duration;
+      transition-delay: $delay;
+    }
+  }
+
+  // hover
+  &:hover .berger {
+    &:before {
+      top: $span * 1.3;
+    }
+    &:after {
+      bottom: $span * 1.3;
+    }
+  }
+
+  // close
+  &.close .berger {
+    transform: rotate(-45deg);
+    transition-property: transform;
+    transition-duration: $duration;
+    &:before {
+      top: 0;
+      transform: rotate(90deg);
+      transition-property: top, transform;
+      transition-duration: $duration;
+      transition-delay: 0, $delay;
+    }
+    &:after {
+      bottom: 0;
+      opacity: 0;
+      transition-duration: .5s;
+      transition-property: bottom;
+    }
+  }
+}
