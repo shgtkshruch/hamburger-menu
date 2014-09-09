@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 gulp = require 'gulp'
 $ = require('gulp-load-plugins')()
@@ -13,10 +13,17 @@ gulp.task 'browser-sync', ->
     watchOptions:
       debounceDelay: 0
     server:
-      baseDir: './'
-      index: './dest/index.html'
+      baseDir: config.dest
     notify: false
     reloadDelay: 0
+
+gulp.task 'html', ['jade'],  ->
+  assets = $.useref.assets()
+  gulp.src config.dest + '/index.html'
+    .pipe assets
+    .pipe assets.restore()
+    .pipe $.useref()
+    .pipe gulp.dest config.dest
 
 gulp.task 'jade', ->
   gulp.src config.src + '/index.jade'
@@ -49,8 +56,8 @@ gulp.task 'coffee', ->
       stream: true
 
 gulp.task 'default', ['build', 'browser-sync'], ->
-  gulp.watch config.src + '/index.jade', ['jade']
+  gulp.watch config.src + '/index.jade', ['html']
   gulp.watch config.src + '/styles/*.scss', ['sass']
   gulp.watch config.src + '/scripts/*.coffee', ['coffee']
 
-gulp.task 'build', ['jade', 'sass', 'coffee']
+gulp.task 'build', ['html', 'sass', 'coffee']

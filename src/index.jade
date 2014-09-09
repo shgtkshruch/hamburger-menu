@@ -11,12 +11,14 @@ html(lang="ja")
     meta(content='telephone=no', name='format-detection')
     // bower:css
     // endbower
-    link(rel='stylesheet', href='dest/styles/style.css', media='all')
+    link(rel='stylesheet', href='styles/style.css', media='all')
   body
     a.menu(href="#")
       span.berger
 
+    // build:js scripts/vendor.js
     // bower:js
     script(src='../bower_components/jquery/dist/jquery.js')
     // endbower
-    script(src='dest/scripts/script.js')
+    // endbuild
+    script(src='scripts/script.js')

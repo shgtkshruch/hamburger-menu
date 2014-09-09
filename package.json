@@ -4,17 +4,17 @@
     "publish": "./github-pages.sh"
   },
   "devDependencies": {
-    "gulp": "*",
-    "gulp-jade": "*",
-    "gulp-ruby-sass": "*",
     "browser-sync": "*",
-    "gulp-coffee": "*",
-    "gulp-plumber": "*",
-    "gulp-changed": "*",
-    "gulp-filter": "*",
+    "coffee-script": "*",
+    "gulp": "*",
     "gulp-autoprefixer": "*",
+    "gulp-changed": "*",
+    "gulp-coffee": "*",
+    "gulp-filter": "*",
+    "gulp-jade": "*",
     "gulp-load-plugins": "*",
-    "coffee-script": "*"
+    "gulp-plumber": "*",
+    "gulp-ruby-sass": "*",
+    "gulp-useref": "^1.0.1"
   }
 }
-
