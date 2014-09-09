@@ -1,0 +1,10 @@
+{
+  "name": "hamburger-menu",
+  "private": true,
+  "dependencies": {
+    "jquery": "*"
+  },
+  "devDependencies": {
+    "bourbon": "*"
+  }
+}
