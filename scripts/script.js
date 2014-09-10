@@ -1,9 +1,11 @@
 (function() {
   $(function() {
-    var $menu;
-    $menu = $('.menu');
+    var $cover, $menu;
+    $menu = $('#js-berger-menu');
+    $cover = $('.cover');
     return $menu.click(function(e) {
-      $(this).toggleClass('close');
+      $(this).toggleClass('open');
+      $cover.toggleClass('open');
       return e.preventDefault();
     });
   });
