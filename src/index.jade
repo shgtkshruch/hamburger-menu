@@ -2,19 +2,18 @@ doctype html
 html(lang="ja")
   head
     meta(charset='UTF-8')
-    title Hamberger Menu
+    title CSS Animated Hamburger Icon
     meta(content='IE=edge', http-equiv='X-UA-Compatible')
     meta(content='author', name='author')
     meta(content='description', name='description')
     meta(content='keywords', name='keywords')
     meta(content='width=device-width, initial-scale=1' name='viewport')
     meta(content='telephone=no', name='format-detection')
-    // bower:css
-    // endbower
     link(rel='stylesheet', href='styles/style.css', media='all')
   body
-    a.menu(href="#")
-      span.berger
+    .cover
+    a#js-berger-menu.berger-menu(href="#")
+      span.berger-menu__icon
 
     // build:js scripts/vendor.js
     // bower:js

@@ -1,8 +1,11 @@
 $ ->
-  $menu = $ '.menu'
+  $menu = $ '#js-berger-menu'
+  $cover = $ '.cover'
 
   $menu.click (e) ->
     $ @
-      .toggleClass 'close'
-    e.preventDefault()
+      .toggleClass 'open'
+    
+    $cover.toggleClass 'open'
 
+    e.preventDefault()
